@@ -34,7 +34,10 @@ class Scraper
         student_profile[:blog] = social.attribute("href").value
       end
     end
+    profile[:profile_quote] = profile.css("div.main-wrapper.profile .vitals-text-container .profile-quote").text
+    profile[:bio] = profile.css("div.main-wrapper.profile .description-holder p").text
 
+    student_profile
 
   end
 
