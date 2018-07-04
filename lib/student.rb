@@ -25,8 +25,7 @@ class Student
 
   def add_student_attributes(attributes_hash)
     attributes_hash.each do |key, value|
-      if Student[key] == false
-        Student[key] = value
+       self.send(("#{key}="), value)
       end
     end
   end
