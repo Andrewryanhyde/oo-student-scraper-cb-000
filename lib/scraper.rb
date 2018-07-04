@@ -34,8 +34,8 @@ class Scraper
         profile[:blog] = icon.attribute("href").value
       end
     end
-    profile[:profile_quote] = profile.css("div.main-wrapper.profile .vitals-text-container .profile-quote").text
-    profile[:bio] = profile.css("div.main-wrapper.profile .description-holder p").text
+    profile[:profile_quote] = doc.css("div.main-wrapper.profile .vitals-text-container .profile-quote").text
+    profile[:bio] = doc.css("div.main-wrapper.profile .description-holder p").text
 
     profile
 
