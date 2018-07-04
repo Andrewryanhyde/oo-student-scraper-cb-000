@@ -31,7 +31,7 @@ class Scraper
       elsif icon.attribute("href").include?("github")
         profile[:github] = icon.attribute("href").value
       else
-        profile[:blog] = social.attribute("href").value
+        profile[:blog] = icon.attribute("href").value
       end
     end
     profile[:profile_quote] = profile.css("div.main-wrapper.profile .vitals-text-container .profile-quote").text
