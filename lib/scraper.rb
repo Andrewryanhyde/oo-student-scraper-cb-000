@@ -24,11 +24,11 @@ class Scraper
     profile = {}
 
     doc.css("div.social-icon-container a").each do |icon|
-      if icon.attribute("href").include?("twitter")
+      if icon.attribute("href").value.include?("twitter")
         profile[:twitter] = icon.attribute("href").value
-      elsif icon.attribute("href").include?("linkedin")
+      elsif icon.attribute("href").value.include?("linkedin")
         profile[:linkedin] = icon.attribute("href").value
-      elsif icon.attribute("href").include?("github")
+      elsif icon.attribute("href").value.include?("github")
         profile[:github] = icon.attribute("href").value
       else
         profile[:blog] = icon.attribute("href").value
@@ -40,6 +40,4 @@ class Scraper
     profile
 
   end
-
-
 end
