@@ -12,7 +12,8 @@ class Scraper
       student_details = {}
       student_details[:name] = card.css('.student-name').text
       student_details[:location] = card.css('.student-location').text
-      student_details[:profile_url] = card.css('.student-card a').text
+      profile_link = student.css("a").attribute("href").value
+      student_details[:profile_url] = './fixtures/student-site/' + profile_link
       scraped_students << student_details
     end
     scraped_students
