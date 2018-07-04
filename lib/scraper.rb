@@ -13,7 +13,7 @@ class Scraper
       scraped_student[:name] = card.css('.student-name').text
       scraped_student[:location] = card.css('.student-location').text
       scraped_student[:profile_url] = card.css("a").attribute("href").value
-      students << student_details
+      students << scraped_student
     end
     scraped_students
   end
