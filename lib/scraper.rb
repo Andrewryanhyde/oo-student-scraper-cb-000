@@ -8,7 +8,7 @@ class Scraper
 
     scraped_students = []
 
-    doc.css(".student-card").each do |card|
+    doc.css("div.student-card").each do |card|
       student_details = {}
       student_details[:name] = card.css('.student-name').text
       student_details[:location] = card.css('.student-location').text
